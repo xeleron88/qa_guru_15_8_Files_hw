@@ -1,0 +1,12 @@
+{
+  "id" : 777,
+  "category" : "dresses",
+  "name" : "black dress",
+  "available" : true,
+  "tags" : ["black", "dress", "woman", "girl"],
+  "characteristics" : {
+    "euSize" : 55,
+    "ruSize" : 155,
+    "usSize" : 555
+  }
+}

@@ -15,15 +15,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class FileTest {
+
+
     ClassLoader cl = FileTest.class.getClassLoader();
-    String zipfile = "testFiles.zip";
+    String zipFile = "testFiles.zip";
 
 
     @DisplayName("ZipCsv test")
     @Test
     void zipCsvTest() throws Exception {
-        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+zipfile))) {
-            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipfile)));
+        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+ zipFile))) {
+            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipFile)));
             ZipEntry entry;
             while ((entry = is.getNextEntry()) != null) {
                 if (entry.getName().contains(".csv")) {
@@ -39,11 +41,11 @@ public class FileTest {
         }
     }
 
-    @DisplayName("ZipPDF test")
+    @DisplayName("ZipPdf test")
     @Test
     void zipPdfTest() throws Exception {
-        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+zipfile))) {
-            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipfile)));
+        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+ zipFile))) {
+            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipFile)));
             ZipEntry entry;
             while ((entry = is.getNextEntry()) != null) {
                 if (entry.getName().contains(".pdf")) {
@@ -59,8 +61,8 @@ public class FileTest {
     @DisplayName("ZipXlsx test")
     @Test
     void zipXlsxTest() throws Exception {
-        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+zipfile))) {
-            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipfile)));
+        try (ZipFile zf = new ZipFile(new File("src/test/resources/"+ zipFile))) {
+            ZipInputStream is = new ZipInputStream(Objects.requireNonNull(cl.getResourceAsStream(zipFile)));
             ZipEntry entry;
             while ((entry = is.getNextEntry()) != null) {
                 if (entry.getName().contains(".xlsx")) {
